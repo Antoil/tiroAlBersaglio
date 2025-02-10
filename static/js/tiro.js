@@ -26,19 +26,21 @@ function draw() {
 }
 
 function calcDist(x1, y1, x2, y2){
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
 function mouseClicked() {
   let centroX = width / 2;
   let centroY = height / 2;
   let r = diametro / 2;
+  let rCentro = 25
   
   // 1. Calcolare la distanza fra il centro del cerchio e il punto cliccato
   let distanza = calcDist(mouseX, mouseY, centroX, centroY);
 
   // 2. SE la distanza calcolata è minore o uguale del raggio -> ho cliccato nel cerchio
-  if(distanza <= 25){
+  if(distanza <= rCentro){
             messaggio.innerHTML = `Hai cliccato il centro del bersaglio coordinate (X: ${mouseX}; Y: ${mouseY})! Hai stra vinto!!!`;
     }
   else if(distanza <= r) {
@@ -49,5 +51,3 @@ function mouseClicked() {
 
   console.log(mouseX, mouseY);
 }
-
-alert("Il file tiro.js è stato caricato correttamente!");
