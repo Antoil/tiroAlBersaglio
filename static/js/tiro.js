@@ -38,15 +38,27 @@ function mouseClicked() {
   
   // 1. Calcolare la distanza fra il centro del cerchio e il punto cliccato
   let distanza = calcDist(mouseX, mouseY, centroX, centroY);
+  
 
   // 2. SE la distanza calcolata è minore o uguale del raggio -> ho cliccato nel cerchio
   if(distanza <= rCentro){
             messaggio.innerHTML = `Hai cliccato il centro del bersaglio coordinate (X: ${mouseX}; Y: ${mouseY})! Hai stra vinto!!!`;
+            fill(255, 0, 0)
+            stroke(255, 0, 0)
+            circle(mouseX, mouseY, 10)
+            
     }
   else if(distanza <= r) {
     messaggio.innerHTML = `Hai cliccato il bersaglio ai punti (X: ${mouseX}; Y: ${mouseY})! Hai vinto`;
+    fill(0, 0, 0)
+    stroke(0, 0, 0)
+    circle(mouseX, mouseY, 10)
+  
   } else {
     messaggio.innerHTML = `Hai cliccato il bersaglio ai punti (X: ${mouseX}; Y: ${mouseY})!Hai perso!`;
+    fill(0, 255, 0)
+    stroke(0, 255, 0)
+    circle(mouseX, mouseY, 10)
   }
 
   console.log(mouseX, mouseY);
